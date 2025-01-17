@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract AshCoin is ERC20, Ownable {
     
-    address stakingAddress;
+    address public stakingAddress;
 
     constructor(address _stakingAddress) ERC20("AshCoin", "ASH") Ownable(msg.sender) {
         stakingAddress = _stakingAddress;

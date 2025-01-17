@@ -28,6 +28,15 @@ function testInitialSupply() public view {
         a.mint(ad, 100);
     }
 
+    function testUpdateStakingContract() public {
+        address ad = vm.addr(1);
+        a.updateContract(ad);
+        vm.prank(ad);
+        a.mint(ad, 100);
+        assertEq(a.balanceOf(ad), 100, "Balance should be 100");
+        assertEq(a.totalSupply(), 100, "Total supply should be 100");
+    }
+
 
 
 
