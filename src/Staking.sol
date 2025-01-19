@@ -3,16 +3,14 @@ pragma solidity ^0.8.13;
 import "forge-std/Test.sol";
 import "src/AshCoin.sol";
 
-interface IAshCoin {
-
-}
-
 contract Staking {
     mapping(address => uint) public balances;
     mapping(address => uint) public unClaimedRewards;
     mapping(address => uint) public lastUpdated;
 
     constructor() {}
+
+    receive() external payable {}
 
     function stake() public  payable {
         require(msg.value > 0);
